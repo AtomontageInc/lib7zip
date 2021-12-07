@@ -38,6 +38,9 @@ set (lib7zip_SOURCES
 )
 
 add_library(7zip STATIC ${lib7zip_SOURCES})
+set_target_properties(7zip PROPERTIES PUBLIC_HEADER ${SOURCE_DIR}/lib7zip.h)
+
+install(TARGETS 7zip LIBRARY PUBLIC_HEADER)
 
 target_compile_options(7zip PRIVATE -std=c++11)
 
